@@ -11,7 +11,18 @@ function setupSocket() {
     // This function is called whenever a new game state is received from the server
     socket.on('gameState', function (jsonGameState) {
         console.log(jsonGameState);
+        data = JSON.parse(jsonGameState)
 
+        document.getElementById("Gold").innerHTML = "Your gold is:  " + data["gold"]
+        document.getElementById("Username").innerHTML = "Hello " + data["username"] + "!"
+
+        document.getElementById("numberOfShovels").innerHTML = "You have: " + data["equipment"]["shovel"]["numberOwned"]
+        document.getElementById("numberOfExcavators").innerHTML = "You have: " + data["equipment"]["excavator"]["numberOwned"]
+        document.getElementById("numberOfMines").innerHTML = "You have: " + data["equipment"]["mine"]["numberOwned"]
+
+        document.getElementById("shovelCost").innerHTML = "Shovel Costs: " + data["equipment"]["shovel"]["cost"]
+        document.getElementById("excavatorCost").innerHTML = "Excavator Costs: " + data["equipment"]["excavator"]["cost"]
+        document.getElementById("mineCost").innerHTML = "Mine Costs: " + data["equipment"]["mine"]["cost"]
         // TODO: Display the game state on your GUI
         // You must display: current gold, and the name, number owned, and cost for each type of equipment
 
@@ -21,7 +32,8 @@ function setupSocket() {
 
 function initializeGame() {
     socket.emit("register", username);
-
+    elem = document.getElementById("asd")
+    elem.innerHTML = "asdasdasd"
     // TODO: Add any initialization code you'd like to setup your GUI
     // This function is called once when the page loads
 

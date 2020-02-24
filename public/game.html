@@ -11,7 +11,42 @@
 <!-- TODO: Setup your GUI -->
 <!-- You may assume that there will be exactly 3 types of equipment with ids of "shovel", "excavator", and "mine" -->
 <!-- You may hardcode elements as HTML and/or use JavaScript with the initializeGame() function to setup your GUI -->
+<div id = "Username">
 
+
+</div>
+<div id = "Gold">
+
+</div>
+<div id = "Equipment">
+
+</div>
+<div id = "shovelBtn" onclick = "buyEquipment('shovel')">
+    <button type="button">
+        <div id ="shovelCost">
+        </div>
+        <div id="numberOfShovels">
+        </div>
+    </button>
+</div>
+<div id = "excavatorBtn" onclick = "buyEquipment('excavator')">
+    <button type="button">
+        <div id ="excavatorCost">
+    </div>
+        <div id="numberOfExcavators">
+        </div>
+    </button>
+</div>
+<div id = "mineBtn" onclick = "buyEquipment('mine')">
+    <button type="button">
+        <div id ="mineCost">
+        </div>
+        <div id="numberOfMines">
+        </div>
+    </button>
+</div>
+
+<button type="button" onclick = "clickGold">Mine the gold old way(ouch)</button>
 
 <script src="game.js"></script>
 
